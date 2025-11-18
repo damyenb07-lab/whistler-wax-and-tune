@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Whistler Wax and Tune</title>
   <meta name="description" content="Whistler Wax and Tune — Ski & Snowboard waxing and edge tuning in Whistler, BC." />
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
   <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <img src="assets/logo.png" alt="Logo" class="logo" />
+        <img src="assets/logo.png" alt="Whistler Wax and Tune logo" class="logo" />
         <div class="brand-text">
           <h1>Whistler Wax and Tune</h1>
           <p class="tagline">Ski & Snowboard waxing + edge tuning — drop-off & pickup</p>
@@ -31,6 +30,7 @@
 
   <!-- Hero -->
   <section class="hero">
+    <div class="hero-overlay"></div>
     <div class="container hero-inner">
       <h2>Get Ride-Ready</h2>
       <p>Fast, affordable, professional waxing and edge tuning in Whistler.</p>
@@ -51,7 +51,6 @@
   <!-- Services -->
   <section id="services" class="container services">
     <h3>Services & Pricing</h3>
-
     <div class="cards">
       <div class="card">
         <h4>Ski Waxing</h4>
@@ -82,97 +81,96 @@
   <!-- How it works -->
   <section id="how" class="container how">
     <h3>How it Works</h3>
-
     <ol class="steps">
-      <li><strong>Book</strong> — choose a service & date.</li>
-      <li><strong>Drop-off</strong> — bring gear to the agreed location.</li>
+      <li><strong>Book</strong> — choose a service & date/time.</li>
+      <li><strong>Drop-off</strong> — bring gear at the scheduled time.</li>
       <li><strong>Pick-up</strong> — collect your freshly waxed gear in 24–48 hrs.</li>
     </ol>
-
-    <p class="note">
-      Unavailable days: <strong>Wednesday, Thursday, Friday</strong>
-    </p>
+    <p class="note">Available times — <strong>Mon & Tue: 4:00 PM–6:30 PM</strong>; <strong>Sat & Sun: 12:00 PM–6:00 PM</strong>. Unavailable Wed/Thu/Fri.</p>
   </section>
 
   <!-- Booking -->
   <section id="booking" class="container booking">
     <h3>Book a Service</h3>
-    <p>Fill out the form below. You will receive a confirmation within 24 hours.</p>
+    <p>Fill out the booking form below. You will receive a confirmation reply within 24 hours.</p>
 
-    <form id="bookingForm" 
-          action="https://formspree.io/f/mjklgojo" 
-          method="POST"
-          class="form"
-          novalidate>
+    <!-- Replace <FORM_ID> with your Formspree ID (instructions in README) -->
+    <form id="bookingForm" action="https://formspree.io/f/<FORM_ID>" method="POST" class="form" novalidate>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" required />
+        </div>
 
-      <label for="name">Full Name</label>
-      <input id="name" name="name" type="text" required />
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input id="email" name="_replyto" type="email" value="damyenbouvier@gmail.com" required />
+        </div>
+      </div>
 
-      <label for="email">Email</label>
-      <input id="email" name="_replyto" type="email" value="damyenbouvier@gmail.com" required />
+      <div class="form-row">
+        <div class="form-field">
+          <label for="service">Service</label>
+          <select id="service" name="service" required>
+            <option value="">Choose a service</option>
+            <option value="Ski Waxing">$20 — Ski Waxing</option>
+            <option value="Ski Waxing + Edge">$25 — Ski Waxing + Edge Tune</option>
+            <option value="Snowboard Waxing">$30 — Snowboard Waxing</option>
+            <option value="Snowboard Waxing + Edge">$35 — Snowboard Waxing + Edge Tune</option>
+          </select>
+        </div>
 
-      <label for="phone">Phone (optional)</label>
-      <input id="phone" name="phone" type="tel" />
+        <div class="form-field">
+          <label for="date">Preferred drop-off date</label>
+          <input id="date" name="date" type="date" required />
+        </div>
+      </div>
 
-      <label for="service">Service</label>
-      <select id="service" name="service" required>
-        <option value="">Choose a service</option>
-        <option value="Ski Waxing">$20 — Ski Waxing</option>
-        <option value="Ski Waxing + Edge">$25 — Ski Waxing + Edge Tune</option>
-        <option value="Snowboard Waxing">$30 — Snowboard Waxing</option>
-        <option value="Snowboard Waxing + Edge">$35 — Snowboard Waxing + Edge Tune</option>
-      </select>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="dropTime">Drop-off time</label>
+          <select id="dropTime" name="dropTime" required>
+            <!-- JS will populate options based on selected date -->
+          </select>
+        </div>
 
-      <label for="date">Preferred Drop-off Date</label>
-      <input id="date" name="date" type="date" required />
+        <div class="form-field">
+          <label for="pickTime">Pick-up time</label>
+          <select id="pickTime" name="pickTime" required>
+            <!-- JS will populate options based on selected date -->
+          </select>
+        </div>
+      </div>
 
-      <label for="notes">Notes</label>
-      <textarea id="notes" name="notes" rows="4"></textarea>
+      <label for="notes">Extra notes</label>
+      <textarea id="notes" name="notes" rows="3" placeholder="Tell us about your gear or special requests"></textarea>
 
+      <!-- Spam honeypot -->
       <input type="text" name="_gotcha" style="display:none" />
 
-      <button class="btn primary" type="submit">Submit Booking</button>
-
-      <p id="formMessage" class="form-message"></p>
+      <button type="submit" class="btn primary">Submit Booking</button>
+      <p id="formMessage" class="form-message" aria-live="polite"></p>
     </form>
 
-    <p class="small">
-      Or DM us on Instagram:
-      <a href="https://instagram.com/whiswaxandtune" target="_blank">
-        @whiswaxandtune
-      </a>
-    </p>
+    <p class="small">Or DM us on Instagram: <a href="https://instagram.com/whiswaxandtune" target="_blank">@whiswaxandtune</a></p>
   </section>
 
   <!-- Gallery -->
   <section id="gallery" class="container gallery">
     <h3>Gallery</h3>
-
     <div class="grid">
-      <div class="photo">Photo</div>
-      <div class="photo">Photo</div>
-      <div class="photo">Photo</div>
+      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=60" alt="mountain" class="photo-img" />
+      <img src="https://images.unsplash.com/photo-1519327156442-1c2d8fb7cf5b?auto=format&fit=crop&w=800&q=60" alt="waxing tools" class="photo-img" />
+      <div class="photo-placeholder">Upload your photos in <code>assets/</code></div>
     </div>
   </section>
 
   <!-- FAQ -->
   <section id="faq" class="container faq">
     <h3>FAQ</h3>
-
-    <details>
-      <summary>How long does waxing take?</summary>
-      <p>Usually 24–48 hours depending on workload.</p>
-    </details>
-
-    <details>
-      <summary>Do you pick up gear?</summary>
-      <p>Drop-off only for now, but pickup may be added.</p>
-    </details>
-
-    <details>
-      <summary>What payment methods?</summary>
-      <p>Cash or e-transfer.</p>
-    </details>
+    <details><summary>How long does waxing take?</summary><p>Usually 24–48 hours depending on workload.</p></details>
+    <details><summary>Do you pick up gear?</summary><p>Drop-off only for now; pickup may be arranged in special cases.</p></details>
+    <details><summary>Payment methods?</summary><p>Cash or e-transfer.</p></details>
   </section>
 
   <!-- Contact -->
