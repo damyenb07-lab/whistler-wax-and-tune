@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Whistler Wax and Tune</title>
+  <meta name="description" content="Whistler Wax and Tune — Ski & Snowboard waxing and edge tuning in Whistler, BC." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Logo" class="logo" />
+        <div class="brand-text">
+          <h1>Whistler Wax and Tune</h1>
+          <p class="tagline">Ski & Snowboard waxing + edge tuning — drop-off & pickup</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#how">How it Works</a>
+        <a href="#booking" class="cta">Book Now</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <h2>Get Ride-Ready</h2>
+      <p>Fast, affordable, professional waxing and edge tuning in Whistler.</p>
+      <a href="#booking" class="btn primary">Book Now</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="container about">
+    <h3>About</h3>
+    <p><strong>Owner:</strong> Damyen Bouvier — Home-based waxing and tuning service in Whistler, BC.</p>
+    <ul>
+      <li>Drop-off → Wax + Tune → Pick-up (24–48 hrs)</li>
+      <li>Flexible hours: evenings & weekends during ski season</li>
+    </ul>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="container services">
+    <h3>Services & Pricing</h3>
+
+    <div class="cards">
+      <div class="card">
+        <h4>Ski Waxing</h4>
+        <p>Standard hot wax for skis.</p>
+        <div class="price">$20</div>
+      </div>
+
+      <div class="card">
+        <h4>Ski Waxing + Edge Tune</h4>
+        <p>Hot wax plus edge sharpening.</p>
+        <div class="price">$25</div>
+      </div>
+
+      <div class="card">
+        <h4>Snowboard Waxing</h4>
+        <p>Standard hot wax for snowboards.</p>
+        <div class="price">$30</div>
+      </div>
+
+      <div class="card">
+        <h4>Snowboard Waxing + Edge Tune</h4>
+        <p>Hot wax plus edge sharpening.</p>
+        <div class="price">$35</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="container how">
+    <h3>How it Works</h3>
+
+    <ol class="steps">
+      <li><strong>Book</strong> — choose a service & date.</li>
+      <li><strong>Drop-off</strong> — bring gear to the agreed location.</li>
+      <li><strong>Pick-up</strong> — collect your freshly waxed gear in 24–48 hrs.</li>
+    </ol>
+
+    <p class="note">
+      Unavailable days: <strong>Wednesday, Thursday, Friday</strong>
+    </p>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking" class="container booking">
+    <h3>Book a Service</h3>
+    <p>Fill out the form below. You will receive a confirmation within 24 hours.</p>
+
+    <form id="bookingForm" 
+          action="https://formspree.io/f/<FORM_ID>" 
+          method="POST"
+          class="form"
+          novalidate>
+
+      <label for="name">Full Name</label>
+      <input id="name" name="name" type="text" required />
+
+      <label for="email">Email</label>
+      <input id="email" name="_replyto" type="email" value="damyenbouvier@gmail.com" required />
+
+      <label for="phone">Phone (optional)</label>
+      <input id="phone" name="phone" type="tel" />
+
+      <label for="service">Service</label>
+      <select id="service" name="service" required>
+        <option value="">Choose a service</option>
+        <option value="Ski Waxing">$20 — Ski Waxing</option>
+        <option value="Ski Waxing + Edge">$25 — Ski Waxing + Edge Tune</option>
+        <option value="Snowboard Waxing">$30 — Snowboard Waxing</option>
+        <option value="Snowboard Waxing + Edge">$35 — Snowboard Waxing + Edge Tune</option>
+      </select>
+
+      <label for="date">Preferred Drop-off Date</label>
+      <input id="date" name="date" type="date" required />
+
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="notes" rows="4"></textarea>
+
+      <input type="text" name="_gotcha" style="display:none" />
+
+      <button class="btn primary" type="submit">Submit Booking</button>
+
+      <p id="formMessage" class="form-message"></p>
+    </form>
+
+    <p class="small">
+      Or DM us on Instagram:
+      <a href="https://instagram.com/whiswaxandtune" target="_blank">
+        @whiswaxandtune
+      </a>
+    </p>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="container gallery">
+    <h3>Gallery</h3>
+
+    <div class="grid">
+      <div class="photo">Photo</div>
+      <div class="photo">Photo</div>
+      <div class="photo">Photo</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="container faq">
+    <h3>FAQ</h3>
+
+    <details>
+      <summary>How long does waxing take?</summary>
+      <p>Usually 24–48 hours depending on workload.</p>
+    </details>
+
+    <details>
+      <summary>Do you pick up gear?</summary>
+      <p>Drop-off only for now, but pickup may be added.</p>
+    </details>
+
+    <details>
+      <summary>What payment methods?</summary>
+      <p>Cash or e-transfer.</p>
+    </details>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container contact">
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:damyenbouvier@gmail.com">damyenbouvier@gmail.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/whiswaxandtune" target="_blank">@whiswaxandtune</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Whistler Wax and Tune</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
